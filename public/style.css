@@ -1,0 +1,168 @@
+/*POLICES*/
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto:wght@300&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --yellow: #f0e219;
+  --black: #070e07;
+  --green: #A3D237;
+  --greendark: #AEA629;
+
+}
+
+/* Couleur du background et couleur/police d'écriture du texte dans le body */
+body {
+  background-color: var(--black);
+  color: white;
+  font-family: 'Roboto';
+}
+
+/* Emplacement , police d'écriture , couleur du texte dans la navbar */
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 1.5rem;
+    font-family: "Indie Flower";
+    color: var(--yellow);
+}
+
+/* Emplacement , couleur et police d'écriture du h1 */
+h1 {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-size: 3rem;
+  font-family: "Indie Flower";
+  color: var(--yellow);
+}
+
+/* Emplacement du h2 */
+h2{
+    margin-top: 1rem;
+}
+
+/* Image de fond et espacement dans le main */
+main{
+    /* background-image: url(./images/abei.jpg); */
+    background-size: cover;
+    padding-bottom: 3%;
+}
+
+/* Police d'écriture, alignement du texte , soulignement et emplacement du titre Filtrer */
+.titre{
+    font-family: "Indie Flower";
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2rem;
+    border-radius: 1rem;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+/* Emplacement , couleur et taille du formulaire */
+form{
+    margin-left: 20%;
+    text-align: center;
+    column-count: 2;
+    padding-top: 2%;
+    background-color: white;
+    width: 60%;
+    border-radius: 10%;
+    color: #070e07;
+}
+
+/* Couleur de fond , taille et emplacement du bouton valider */
+button{
+    background-color: var(--green);
+    border: 1px var(--green) solid;
+    width: 30%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+/* Couleur de fond , emplacement du texte et du bandeau et taille de la police du footer  */
+footer{
+    background-color: var(--greendark);
+    text-align: center;
+    font-family: 'Indie Flower';
+    font-size: x-large;
+    padding: 15px;
+}
+
+/* Responsive tel */
+@media screen and (max-width: 428px) {
+
+  body {
+    background-color: var(--black);
+    color: white;
+    font-family: "Roboto";
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-family: "Indie Flower";
+    color: var(--yellow);
+    margin-left: 5%;
+  }
+
+  .pages{
+    font-size: 60% ;
+    margin-right: 30%;
+  }
+
+  h2{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.titre{
+  font-size: 3rem;
+  text-align: center;
+}
+
+form{
+  margin-left: 15%;
+  text-align: center;
+  column-count: 2;
+  padding-top: 1%;
+  background-color: white;
+  width: 65%;
+  border-radius: 5%;
+  color: #070e07;
+}
+
+#txt{
+  width: 90%;
+}
+
+main{
+  background-image: url(./images/abei.jpg);
+  background-size: cover;
+  padding-bottom: 3%;
+}
+
+button{
+  background-color: var(--green);
+  border: 1px var(--green) solid;
+  width: 50%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+}

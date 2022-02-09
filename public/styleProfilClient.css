@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto:wght@300&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --yellow: #f0e219;
+  --white: #fff;
+  --black: #070e07;
+  --greendark: #aea629;
+  --green: #a3d237;
+}
+
+body {
+  background-color: var(--black);
+  color: white;
+  font-family: "Roboto";
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 1.5rem;
+  font-family: "Indie Flower";
+  color: var(--yellow);
+}
+.pages a {
+  text-decoration: none;
+  color: var(--yellow);
+  font-family: "Indie Flower";
+}
+/* titre principal */
+h1 {
+  text-align: center;
+  margin-top: 1%;
+  font-size: 3rem;
+  font-family: "Indie Flower";
+  color: var(--yellow);
+}
+/* grille separant description & bee */
+
+/* cadre description bee */
+.containerPrinc {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  height: 70vh;
+  margin: 3% 60px;
+}
+.case1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+.case1 p {
+  font-family: "Indie Flower";
+}
+.profil {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.droit {
+  margin-left: 14%;
+}
+img {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  margin: 10px;
+}
+
+.case2 {
+  background-image: url(/img/bee2.jpg);
+  background-size: cover;
+  border-radius: 5px;
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-family: "Indie Flower";
+  margin-bottom: 15px;
+}
+
+.case3 {
+  grid-column: 1;
+  grid-row: 2;
+}
+.case4 {
+  grid-column: 1 / 4;
+  grid-row: 4;
+}
+
+/* Couleur de fond , taille et emplacement du bouton valider */
+.case4 button {
+  background-color: var(--green);
+  border: 1px var(--green) solid;
+  width: 30%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-top: 10%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: var(--greendark);
+  text-align: center;
+  font-family: "Indie Flower";
+  font-size: x-large;
+  padding: 15px;
+  margin-top: 10%;
+}

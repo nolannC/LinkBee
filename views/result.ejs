@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="abeille_icon.ico" />
+    <link rel="stylesheet" href="/styleR.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- Titre -->
+            <a href="/" style="text-decoration: none;">
+                <h1>LinkBee</h1>
+            </a>
+            <div class="pages">
+                <a href="/profil">
+                    <h2>Mon compte</h2>
+                </a>
+                <a href="/search">
+                    <h2>Recherche</h2>
+                </a>
+                <a href="/disconnect">
+                    <h2>Déconnexion</h2>
+                </a>
+        </nav>
+    </header>
+    <main id="result">
+
+    </main>
+    <script>
+        const users = <%- JSON.stringify(users) %>
+        console.log(users);
+        users.forEach((user, index) => {
+            document.querySelector("#result").innerHTML += `
+            <div class="container-main" id="${index}">
+                <div class="grid-item1">
+                    <div class="container-name-profil">
+                        <div class="photos-profil">
+                            <img src="data:image/png;base64, ${user.data}" alt="photos de profil">
+                        </div>
+                        <h2>${user.fName} ${user.lName}</h2>
+                    </div>
+                    <div class="container-descriptif">
+                        <h2>Description : </h2>
+                        <p>${user.description}</p>
+                    </div>
+                </div>
+                <div class="grid-item2">
+                    <img src="/images/png-carte-de-france--1078.png" alt="carte de France">
+                </div>
+            </div>
+        `;
+        });
+
+        document.querySelectorAll('.container-main').forEach(section => {
+            section.addEventListener('click', e => {
+                console.log(section);
+                window.location = "http://localhost:5050/x?id=" + users[section.id]._id;
+            });
+        });
+    </script>
+</body>
+
+</html>

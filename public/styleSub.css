@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto:wght@300&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --yellow: #f0e219;
+  --white: #fff;
+  --black: #070e07;
+  --greendark: #aea629;
+}
+
+body {
+  background-color: var(--black);
+  color: white;
+  font-family: "Roboto";
+}
+nav {
+  height: 9vh;
+}
+/* titre principal */
+h1 {
+  text-align: center;
+  margin-top: 1%;
+  font-size: 3rem;
+  font-family: "Indie Flower";
+  color: var(--yellow);
+}
+/* grille separant description & bee */
+/* cadre description bee */
+.container1 {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 30vh;
+}
+
+/* image de background */
+.sizeBee {
+  position: absolute;
+  width: 100%;
+  opacity: 0.75;
+  left: 0;
+}
+
+/* titre description */
+h2 {
+  padding: 10px;
+  font-size: 1.6rem;
+  font-family: "Indie Flower";
+  margin-bottom: 15px;
+}
+
+/* FORMULAIRE DE CONNEXION */
+.formCo {
+  display: grid;
+  position: relative;
+  z-index: 2;
+  background-color: var(--white);
+  padding: 5%;
+  width: 30%;
+  color: var(--black);
+  flex-direction: column;
+  border-radius: 15px;
+  text-align: center;
+  justify-content: center;
+  margin-left: 35%;
+  justify-items: center;
+}
+.formCo input {
+  padding: 3%;
+  margin-bottom: 5%;
+  border-radius: 15px;
+  border: 1px solid;
+}
+/* gestion du bouton continuer */
+.btn-conti {
+  background-color: var(--yellow);
+  border: none;
+  border-radius: 5px;
+  /* width: 65%; */
+}
+/* titre formulaire */
+.formCo h2 {
+  padding: 0;
+}
+.jointure {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.jointure hr {
+  border: 1px solid var(--black);
+  width: 60px;
+}
+.jointure p {
+  font-family: "Indie Flower";
+  font-size: 120%;
+  margin: auto 20px;
+}
+.dir-inscri {
+  display: flex;
+  flex-direction: column;
+}
+.btn-inscri {
+  border: none;
+  background: none;
+  color: var(--greendark);
+  margin-top: 5%;
+}
+footer {
+  background-color: var(--greendark);
+  text-align: center;
+  font-family: "Indie Flower";
+  font-size: x-large;
+  position: relative;
+  z-index: 2;
+  /* margin-top: 11%; */
+  padding: 15px;
+}
+
+@media screen and (max-width: 428px) {
+  nav {
+    height: 9vh;
+  }
+  /* titre principal */
+  h1 {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 3rem;
+    font-family: "Indie Flower";
+    color: var(--yellow);
+  }
+  /* cadre description bee */
+  .container {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 30vh;
+  }
+
+  /* image de background */
+  .sizeBee {
+    position: absolute;
+    width: 100%;
+    opacity: 0.75;
+    left: 0;
+  }
+
+  /* FORMULAIRE DE CONNEXION */
+  .formCo {
+    display: grid;
+    background-color: var(--white);
+    padding: 9%;
+    width: 70%;
+    color: var(--black);
+    flex-direction: column;
+    margin: 85px auto;
+    border-radius: 15px;
+  }
+  /* titre formulaire */
+  .container2 h2 {
+    padding: 0;
+  }
+  .container2 input {
+    padding: 5%;
+    margin-bottom: 5%;
+    border-radius: 15px;
+    border: 1px solid;
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style3.css" />
+    <link rel="shortcut icon" type="image/png" href="abeille_icon.ico"/>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>LinkBee</h1>
+        </nav>
+    </header>
+    <main>
+        <!-- background IMG -->
+        <section class="containerPrinc">
+            <div class="container1">
+                <img class="sizeBee" src="/img/dmitry-grigoriev-unsplash.jpg" alt="bee" />
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>
+                        Réseau social entre passionnés d'apiculture, que ce soit professionels ou amateurs.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Formulaire de connexion -->
+            <div class="container2">
+                <form method="post" action="/filter">
+                    <div class="formCo">
+                        <h2>S'identifier</h2>
+                        <input id="mail" type="text" placeholder="Mail" name="email" required />
+                        <input type="password" placeholder="Mot de passe" name="password" required />
+                        <button class="btn-conti" type="submit" value="post">
+                            Continuer
+                        </button>
+                        <div class="jointure">
+                            <span>
+                                <hr />
+                            </span>
+                            <span>
+                                <p>ou</p>
+                            </span>
+                            <span>
+                                <hr />
+                            </span>
+                        </div>
+                        <div class="dir-inscri">
+                            <p>Nouveau sur LinkBee ?</p>
+                            <a href="/signup">
+                                <p class="btn-inscri">
+                                    S'inscrire
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    </main>
+    <footer>
+        <p>©LinkBee</p>
+    </footer>
+</body>
+
+</html>

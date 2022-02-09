@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil perso</title>
+    <link rel="stylesheet" href="./../public/styleProfil.css" />
+    <script type="text/javascript" src="./index.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h1>LinkBee</h1>
+        <div class="pages">
+            <h2><a href="/pages/profil.html"> Mon compte </a></h2>
+            <h2><a href="#"></a> Recherche</h2>
+            <h2><a href="/index.html"> Déconnexion</a></h2>
+        </div>
+        
+    </nav>
+    </header>
+    <main>
+      <!-- background IMG -->
+      <section class="containerPrinc">
+        <div class="case1">
+          <div class="profil">
+            <div>
+              <img src="/img/pexels-thgusstavo-santana-2709718.jpg" alt="bernard">
+            </div>
+            <h2>Bernard Legriou</h2>
+          </div>
+          <p class="droit">Professionnel</p>
+        </div>
+        <div class="case2"></div>
+        <div class="case3">
+          <h2>Description</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut labore
+            saepe excepturi doloremque magnam suscipit. Laudantium ad excepturi
+            nostrum nemo, aliquid blanditiis quod fuga laboriosam, cum sed
+            aliquam deleniti dolore!
+          </p>
+        </div>
+        <div class="case3-5">
+          <button>Modifier le profil</button>
+        </div>
+        <div class="case4">
+          <h2 class="titre">Sélectionnez vos informations</h2>
+        <br>
+        <form method="post" action="/filter">
+            <h2>Code postal :</h2>
+            <input id="txt" type="text" onkeypress="return onlyNumberKey(event)" placeholder="Code postal" name="cdPost"
+                required><br>
+            <br>
+            <h2>Nombre de colonies :</h2>
+            <input id="txt" type="text" onkeypress="return onlyNumberKey(event)" placeholder="Nb de colonies" name="nbColonies"
+                required><br>
+            <br>
+            <h2>Race d'abeilles :</h2>
+            <br>
+            <input type="checkbox" name="race1">Abeille noire<br>
+            <input type="checkbox" name="race2">Abeille italienne<br>
+            <input type="checkbox" name="race3">Abeille scutellata<br>
+            <input type="checkbox" name="race4">Abeille caucasienne<br>
+            <input type="checkbox" name="race5">Abeille carnica<br>
+            <input type="checkbox" name="race6">Abeille hybride buckfast<br>
+            <br>
+            
+            <div class="ruches">
+            <h2>Types de ruches :</h2>
+            <br>
+            <input type="checkbox" name="ruche1">Dadan<br>
+            <input type="checkbox" name="ruche2">Warré<br>
+            <input type="checkbox" name="ruche3">Langstroth<br>
+            <input type="checkbox" name="ruche4">Voirnot<br>
+            <input type="checkbox" name="ruche5">Layens<br>
+            <input type="checkbox" name="ruche6">Kényane<br>
+            <input type="checkbox" name="ruche7">Japonaise<br>
+            <input type="checkbox" name="ruche8">Tronc<br>
+            <input type="checkbox" name="ruche9">Paille<br>
+            <input type="checkbox" name="ruche10">Fait maison<br>
+            <br>
+            </div>
+    
+            <h2>Objectif de production :</h2>
+            <br>
+            <input type="checkbox" name="prod1">Pollinisation<br>
+            <input type="checkbox" name="prod2">Sauvegarde<br>
+            <input type="checkbox" name="prod3">Miel<br>
+            <input type="checkbox" name="prod4">Cire<br>
+            <input type="checkbox" name="prod5">Propolis<br>
+            <input type="checkbox" name="prod6">Pollen<br>
+            <input type="checkbox" name="prod7">Venin d'abeille<br>
+            <br>
+    
+            <h2>Secteur de butinage :</h2>
+            <br>
+            <input type="checkbox" name="secteur1">Champs de culture<br>
+            <input type="checkbox" name="secteur2">Forêt<br>
+            <input type="checkbox" name="secteur3">Prairie<br>
+            <input type="checkbox" name="secteur4">Habitations<br>
+            <input type="checkbox" name="secteur5">Parcs<br>
+            <input type="checkbox" name="secteur6">Point d'eau<br>
+            <input type="checkbox" name="secteur7">Mer<br>
+            <input type="checkbox" name="secteur8">Montagne<br>
+            <br>
+    
+            <h2>Type de ruchers :</h2>
+            <br>
+            <input type="checkbox" name="ruchers1">Tranhumant<br>
+            <input type="checkbox" name="ruchers2">Sédentaire<br>
+    
+            <input type="checkbox" name="traitement">Traitez vous vos abeilles ?<br>
+    
+            <input type="checkbox" name="elevageReine">Avez-vous un élevage de reines ?<br>
+            <br>
+            <button type="submit" value="post">Valider</button>
+        </div>
+        </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>©LinkBee</p>
+    </footer>
+  </body>
+</html>

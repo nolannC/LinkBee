@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil perso</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="shortcut icon" type="image/png" href="abeille_icon.ico"/>
+    <link rel="stylesheet" href="./styleProfilClient.css" />
+    <style>
+        input {
+            font-size: 14px;
+            /*fallback for old browsers */
+            font-size: calc(1.4*75vw/120);
+            /* 1.4 is a fudge factor by inspection. */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+          <h1><a href="/" style="text-decoration: none; color: #f0e219">LinkBee</a></h1>
+          <div class="pages">
+              <h2> <a href="/profil"> Mon compte </a></h2>
+              <h2> <a href="/search"> Recherche </a></h2>
+              <h2> <a href="/disconnect"> Déconnexion</a></h2>
+          </div>
+          
+      </nav>
+      </header>
+    <section class="containerPrinc">
+        <div class="case1">
+          <div class="profil">
+            <div>
+            <img src="" alt="bernard">
+          </div>
+          <h2 class="name"></h2>
+        </div>
+        <p class="droit">Professionnel</p>
+        </div>
+        <div class="case2"></div>
+        <div class="case3">
+          <h2>Description</h2>
+          <p class="description">
+          </p>
+          <div class="case4">
+            <button id="toggleMessages" type="submit" value="post">Contacter</button>
+          </div>
+          <div class="messages" hidden>
+            <article class="message is-warning">
+                <div class="message-header">
+                    <p>Messages</p>
+                    <button class="delete" aria-label="delete" id="closeMessages"></button>
+                </div>
+                <div class="message-body">
+                    
+                </div>
+                <input id="inputMessage" type="text" placeholder="Envoyer un message" name="message" size="50">
+                <button id="sendMessage">Envoyer</button>
+            </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>©LinkBee</p>
+    </footer>
+    <script>
+        const user = <%- JSON.stringify(user) %>
+        console.log(user);
+        document.querySelector("img").src = `data:image/png;base64, ${user.data}`;
+
+        document.querySelectorAll('.infos p').forEach((p, index) => {
+            p.innerHTML = user[Object.keys(user)[Object.keys(user).findIndex(k => k === p.id)]];
+        });
+        // document.querySelector('#localisation').innerHTML += " " + user.postalCode;
+        document.querySelector('.name').textContent = user.fName + " " + user.lName;
+        document.querySelector('.description').textContent = user.description;
+
+        document.querySelector('#toggleMessages').addEventListener('click', e => {
+            document.querySelector('.messages').hidden = !document.querySelector('.messages').hidden;
+        })
+        document.querySelector('#closeMessages').addEventListener('click', e => {
+            document.querySelector('.messages').hidden = true;
+        })
+        document.querySelector('#sendMessage').addEventListener('click', e => {
+            const url = "http://localhost:5050/x/messages";
+            fetch(url, {
+                method: "POST",
+                headers: { 'Content-Type': "application/json"},
+                // body: new FormData(document.getElementById("inputMessage")),
+                // -- or --
+                body : JSON.stringify({
+                    content : document.getElementById('inputMessage').value
+                })
+            }).then(
+                    response => response.text() // .json(), etc.
+                    // same as function(response) {return response.text();}
+                ).then(
+                    html => console.log(html)
+                );
+        })
+    </script>
+    <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <script>
+        const socket = io('http://localhost:5050');
+        document.querySelector('#sendMessage').addEventListener('click', e => {
+            socket.emit('message', document.querySelector('#inputMessage').value);
+        });
+
+        socket.on('messageSend', data => {
+            console.log(data);
+        })
+
+    </script>
+    <!-- <script type="module">
+        import { io } from "/socket.io/socket.io.js";
+        const socket = io();
+    </script> -->
+</body>
+
+</html>

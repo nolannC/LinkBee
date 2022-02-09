@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/pages/styleSub.css" />
+  <script type="text/javascript" src="./index.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1>LinkBee</h1>
+    </nav>
+  </header>
+  <main>
+    <!-- background IMG -->
+    <div class="container1">
+      <img class="sizeBee" src="/img/ibrahim-ozdemir-unsplash.jpg" alt="bee" />
+    </div>
+
+    <!-- Formulaire de connexion -->
+    <div class="container2">
+      <form method="post" action="/filter" enctype="multipart/form-data">
+        <div class="formCo">
+          <h2>Inscription</h2>
+          <div>
+            <input type="text" placeholder="Nom" name="lName" required />
+            <input type="text" placeholder="Prénom" name="fName" required />
+            <input type="text" onkeypress="return onlyNumberKey(event)" maxlength="5" placeholder="Code postal"
+              name="postalCode" required />
+            <input id="mail" type="text" placeholder="Mail" name="email" required />
+            <input type="password" placeholder="Mot de passe" name="password" required />
+            <input id="upload" type="file" accept="image/png, image/jpeg, image/jpg" name="profil_image" />
+            <img id="display-image" src="" width="100" />
+            <button class="btn-conti" type="submit" value="post">
+              Continuer
+            </button>
+            <div class="jointure">
+              <span>
+                <hr />
+              </span>
+              <span>
+                <p>ou</p>
+              </span>
+              <span>
+                <hr />
+              </span>
+            </div>
+            <div class="dir-inscri">
+              <p>Déjà inscrit(e) ?</p>
+              <button class="btn-inscri" type="submit" value="post">
+                S'identifier
+              </button>
+            </div>
+          </div>
+      </form>
+    </div>
+    </section>
+  </main>
+  <footer>
+    <p>©LinkBee</p>
+  </footer>
+  <script>
+    function onlyNumberKey(evt) {
+
+      // Only ASCII character in that range allowed
+      var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+      if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+        return false;
+      return true;
+    }
+  </script>
+</body>
+
+</html>
